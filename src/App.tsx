@@ -1,4 +1,4 @@
-import { IonApp, IonButton, setupIonicReact } from "@ionic/react";
+import { IonApp, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import "swiper/css";
@@ -24,7 +24,6 @@ import "./theme/variables.css";
 
 import Tabs from "./components/Tabs";
 
-
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -32,6 +31,12 @@ const App: React.FC = () => (
     <IonApp key={"app"}>
       <AnimatePresence>
         <IonReactRouter>
+          {/* 
+            Remove this if you are using tabs layout,
+            If you do not need tabs layout, remove the <IonTabs> element
+            And uncomment the <Navigation /> element
+          */}
+          {/* <Navigation /> */}
           <Tabs />
         </IonReactRouter>
       </AnimatePresence>
