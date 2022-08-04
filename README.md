@@ -14,6 +14,8 @@ Learn more about [ionic cli](https://ionicframework.com/docs/cli/).
     npm install -g @ionic/cli
     ionic serve
 
+A new web page will popup once start scripts runs successfully.
+
 ## Theme
 
 By default, it comes with a standard theme that supports both light and dark mode, you can change the theme by editing the `./src/theme/variables.css` file.
