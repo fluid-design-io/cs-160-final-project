@@ -32,7 +32,9 @@ To customize the links, please refer to Ionic doc: [Navigation](https://ionicfra
 
 ## Components
 
-All Ionic components have `ios` and `md` variants, based on the viewing device, they will automatically change styles. Check out Ionic doc: [Components](https://ionicframework.com/docs/components)
+All Ionic components have `ios` and `md` variants, based on the viewing device, they will automatically change styles. 
+
+Check out Ionic doc: [Components](https://ionicframework.com/docs/components)
 
 An example component in the starter file is `<CardExamples />`
 
