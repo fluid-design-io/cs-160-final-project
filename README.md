@@ -1,5 +1,7 @@
 # ionic-tailwind-starter
 
+A starter template for creating [React](https://reactjs.org/) App using [Ionic](https://ionicframework.com/) and [tailwindcss](https://tailwindcss.com/).
+
 ## Usage
 
 Method 1:
@@ -32,15 +34,16 @@ To customize the links, please refer to Ionic doc: [Navigation](https://ionicfra
 
 ## Components
 
-All Ionic components have `ios` and `md` variants, based on the viewing device, they will automatically change styles. 
+All Ionic components have `ios` and `md` variants, based on the viewing device, they will automatically change styles.
 
 Check out Ionic doc: [Components](https://ionicframework.com/docs/components)
 
 An example component in the starter file is `<CardExamples />`
 
 ## Example
-<!-- Make a table with 2 colums -->
-| Android | iOS |
-| ------ | ------ |
-| ![image](https://user-images.githubusercontent.com/13263720/182948251-695bad6b-4539-4d64-920a-5847805711aa.png) | ![image](https://user-images.githubusercontent.com/13263720/182948317-e39dd46c-0d32-4a64-a7fb-def0a0dd8f04.png) |
 
+<!-- Make a table with 2 colums -->
+
+| Android                                                                                                         | iOS                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ![image](https://user-images.githubusercontent.com/13263720/182948251-695bad6b-4539-4d64-920a-5847805711aa.png) | ![image](https://user-images.githubusercontent.com/13263720/182948317-e39dd46c-0d32-4a64-a7fb-def0a0dd8f04.png) |
