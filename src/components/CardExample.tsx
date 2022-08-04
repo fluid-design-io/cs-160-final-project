@@ -1,5 +1,6 @@
 import {
   IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -13,11 +14,44 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonModal,
 } from "@ionic/react";
 import { pin, walk, warning, wifi, wine } from "ionicons/icons";
 import React from "react";
 
+const ModalExample = ({
+  onDismiss,
+}: {
+  onDismiss: (data?: string | null | undefined | number, role?: string) => void;
+}) => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonButton color="medium" onClick={() => onDismiss(null, "cancel")}>
+              Cancel
+            </IonButton>
+          </IonButtons>
+          <IonTitle>Welcome</IonTitle>
+          <IonButtons slot="end">
+            <IonButton onClick={() => onDismiss()}>Confirm</IonButton>
+          </IonButtons>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <IonItem>
+          <h1>Hi</h1>
+        </IonItem>
+      </IonContent>
+    </IonPage>
+  );
+};
+
 export const CardExamples: React.FC = () => {
+  const [openModal, closeModal] = useIonModal(ModalExample, {
+    onDismiss: () => closeModal(),
+  });
   return (
     <>
       <IonCard>
@@ -37,8 +71,12 @@ export const CardExamples: React.FC = () => {
         <IonItem>
           <IonIcon icon={pin} slot="start" />
           <IonLabel>ion-item in a card, icon left, button right</IonLabel>
-          <IonButton fill="outline" slot="end">
-            View
+          <IonButton
+            fill="outline"
+            slot="end"
+            onClick={() => openModal({ canDismiss: true })}
+          >
+            Open Modal
           </IonButton>
         </IonItem>
 
