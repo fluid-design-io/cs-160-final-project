@@ -37,5 +37,5 @@ An example component in the starter file is `<CardExamples />`
 <!-- Make a table with 2 colums -->
 | Android | iOS |
 | ------ | ------ |
-| ![image](https://user-images.githubusercontent.com/13263720/182942496-a4697f88-9267-4f12-b6e8-856cb7787cfa.png) | ![image](https://user-images.githubusercontent.com/13263720/182942503-51fd4bad-cf41-46eb-9bde-ba958a09f600.png) |
+| ![image](https://user-images.githubusercontent.com/13263720/182948251-695bad6b-4539-4d64-920a-5847805711aa.png) | ![image](https://user-images.githubusercontent.com/13263720/182948317-e39dd46c-0d32-4a64-a7fb-def0a0dd8f04.png) |
 
