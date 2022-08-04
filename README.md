@@ -3,11 +3,13 @@
 ## Usage
 
 Method 1:
+
     npm install
     npm run start
 
 Method 2:
 Learn more about [ionic cli](https://ionicframework.com/docs/cli/).
+
     npm install
     npm install -g @ionic/cli
     ionic serve
