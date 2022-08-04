@@ -28,7 +28,12 @@ However, if you do not need the tabs layout, please remove the `<Tabs />` from `
 
 To customize the links, please refer to Ionic doc: [Navigation](https://ionicframework.com/docs/react/navigation)
 
-## 
+## Components
+
+Check out Ionic doc: [Components](https://ionicframework.com/docs/components)
+An example component in the starter file is `<CardExamples />`
+
+## Example
 <!-- Make a table with 2 colums -->
 | Android | iOS |
 | ------ | ------ |
