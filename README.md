@@ -6,6 +6,11 @@
     npm install -g @ionic/cli
     ionic serve
 
+## Theme
+
+You can change the theme by editing the `./theme/variables.css` file.
+To generate the theme, please checkout the [ionic theme generator](https://ionicframework.com/docs/theming/color-generator)
+
 <!-- Make a table with 2 colums -->
 | Android | iOS |
 | ------ | ------ |
