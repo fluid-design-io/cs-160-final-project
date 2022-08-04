@@ -16,7 +16,7 @@ import Tab3 from "../pages/Tab3";
 interface props {}
 
 const Tabs: React.FC<props> = () => {
-  return (
+  return ( 
     <IonTabs>
       <IonRouterOutlet id="ion-app">
         <Route exact path="/tab1" component={Tab1} />
