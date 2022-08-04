@@ -1,0 +1,85 @@
+.welcome-wrap .welcome {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-wrap .welcome .welcome-h1 {
+  padding-top: 48px;
+  font-size: 2.15rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .welcome-wrap .welcome .welcome-h1 {
+    font-size: 2.5rem;
+  }
+}
+.welcome-wrap .welcome .welcome-slider {
+  flex: 1;
+  width: 100%;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content {
+  height: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .welcome-p {
+  margin-top: 0px;
+  padding: 8px 16px 0 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .slide-img {
+  flex: 1;
+  display: flex;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .slide-text {
+  flex: 1;
+  align-self: center;
+  display: flex;
+  padding: 0 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .slide-text .row {
+  padding: 16px;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .slide-text .row ion-icon {
+  font-size: 2rem;
+  margin-right: 16px;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .slide-text .row h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.welcome-wrap .welcome .welcome-slider .slide-wrap .slide-content .slide-text .row p {
+  margin: 0;
+  font-size: 0.925rem;
+  color: var(--ion-color-medium);
+}
+.welcome-wrap .welcome-button {
+  font-weight: 600;
+  letter-spacing: 0.035rem;
+  max-width: 420px;
+  position: relative;
+  margin: 0 auto;
+}
+.welcome-wrap .permission {
+  text-align: center;
+  font-weight: 600;
+  max-width: 420px;
+  position: relative;
+  margin: 16px auto;
+}

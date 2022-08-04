@@ -1,0 +1,109 @@
+.item-group,
+.item-group-input {
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
+  margin: 0 auto;
+  max-width: 540px;
+}
+.ios .item-group-input {
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
+  margin: 0 auto;
+  max-width: 540px;
+  border-radius: 0.5rem;
+  background-color: var(--ion-item-background);
+  margin-bottom: 1rem;
+}
+.ios .item-group-input.margin {
+  margin: 1rem;
+}
+.ios .item-group-input ion-item {
+  --border-color: rgba(0, 0, 0, 0);
+}
+.ios .item-group-input ion-item:first-of-type {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.ios .item-group-input ion-item:last-of-type {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  --inner-border-width: 0px;
+}
+.md .item-group-input ion-item:first-of-type {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.md .item-group-input ion-item:last-of-type {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  --inner-border-width: 0px;
+}
+.ios .padding-safe-horizontal {
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
+}
+.ios .item-group .item-input {
+  --inner-border-width: 0px;
+  
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.ios .item-group .item-input ion-input {
+  --padding-top: 4px;
+  --padding-bottom: 0.5rem;
+  font-size: 0.925rem;
+}
+.ios .item-group-title {
+  font-weight: 500;
+  color: var(--ion-color-medium);
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  font-size: 0.725rem;
+  padding: 0 1rem;
+}
+.item-description {
+  margin: 0 auto;
+  padding: 0 0 0.5rem 0;
+  font-size: 0.825rem;
+  color: #666;
+}
+.ios .item-input + .item-description {
+  margin: -10px auto 1rem auto;
+  font-size: 0.825rem;
+  color: #777;
+}
+.ios .item-group-input + .item-description {
+  margin: -10px auto 1rem auto;
+  font-size: 0.825rem;
+  color: #777;
+}
+.md .item-group-input + .item-description {
+  margin: 4px auto 1rem auto;
+  font-size: 0.825rem;
+  color: #777;
+}
+.ios .item-check-terms {
+  border-radius: 0.5rem;
+  --inner-border-width: 0px;
+  margin-bottom: 1rem;
+  --background: none;
+  --padding-start: 0;
+}
+.md .item-button {
+  margin: 1rem;
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+ion-content::-webkit-scrollbar {
+  display: none !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+ion-content::part(scroll)::-webkit-scrollbar {
+  display: none !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}

@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./item-group.css");
+
+@layer base {
+  /* inter var - latin */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url("../fonts/inter-var-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Lobser";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/lobster-v23-latin-regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url("../fonts/nunito-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  body {
+    background-color: var(--ion-background-color);
+  }
+  .title-logo {
+    @apply font-logo;
+    font-size: 1.875rem;
+    padding: 6px 14px;
+  }
+  .toolbar-title {
+    font-size: 1.5rem;
+    padding: 6px 14px;
+    font-weight: 700;
+  }
+  .page-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .toolbar {
+    --border-color: rgba(0, 0, 0, 0.08);
+  }
+  .toolbar.no-padding {
+    --padding-start: 0 !important;
+    --padding-end: 0 !important;
+  }
+  .tab-bar {
+    --border: 0.55px solid
+      var(
+        --ion-tab-bar-border-color,
+        var(--ion-border-color, var(--ion-color-step-150, rgba(0, 0, 0, 0.08)))
+      );
+  }
+  ::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  input[data-autocompleted] {
+    background-color: transparent !important;
+  }
+  /* #endregion  /**======== Typography =========== */
+}
+@layer utilities {
+  .explore-card {
+    @apply relative;
+  }
+  .explore-card .status-chip {
+    position: absolute;
+    bottom: 16px;
+    right: 12px;
+    border-radius: 64px;
+    padding: 4px 6px;
+    background-color: var(--ion-item-background);
+    font-size: 0.625rem;
+    font-weight: 600;
+  }
+}
