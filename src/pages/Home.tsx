@@ -50,28 +50,28 @@ const Home: React.FC = () => {
             <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2 px-4">
               <IonChip
                 className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/tab1")}
+                onClick={async () => await openPage("/orders")}
               >
                 <IonIcon icon={heart} color="dark" />
                 <IonLabel>Orders</IonLabel>
               </IonChip>
               <IonChip
                 className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/tab2")}
+                onClick={async () => await openPage("/rewards")}
               >
                 <IonIcon icon={heart} color="dark" />
                 <IonLabel>Rewards</IonLabel>
               </IonChip>
               <IonChip
                 className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/tab3")}
+                onClick={async () => await openPage("/wiki")}
               >
                 <IonIcon icon={heart} color="dark" />
                 <IonLabel>Wiki</IonLabel>
               </IonChip>
               <IonChip
                 className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/tab3")}
+                onClick={async () => await openPage("/wiki")}
               >
                 <IonIcon icon={heart} color="dark" />
                 <IonLabel>Something Else</IonLabel>

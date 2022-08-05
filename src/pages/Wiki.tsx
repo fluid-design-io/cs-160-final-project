@@ -10,7 +10,7 @@ import {
 
 import ExploreContainer from "../components/ExploreContainer";
 
-const Tab1: React.FC = () => {
+const Wiki: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -18,19 +18,19 @@ const Tab1: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="home" />
           </IonButtons>
-          <IonTitle>Search</IonTitle>
+          <IonTitle>Wiki</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Search</IonTitle>
+            <IonTitle size="large">Wiki</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+        <ExploreContainer name="Wiki" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Wiki;

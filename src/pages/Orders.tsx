@@ -8,9 +8,9 @@ import {
   IonToolbar,
 } from "@ionic/react";
 
-import ExploreContainer from "../components/ExploreContainer";
+import { CardExamples } from "../components/CardExample";
 
-const Tab1: React.FC = () => {
+const Orders: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -18,19 +18,19 @@ const Tab1: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="home" />
           </IonButtons>
-          <IonTitle>Account</IonTitle>
+          <IonTitle>Orders</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Account</IonTitle>
+            <IonTitle size="large">Orders</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <CardExamples />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Orders;

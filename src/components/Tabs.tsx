@@ -8,9 +8,9 @@ import {
 import { compass, person, search } from "ionicons/icons";
 import { Redirect, Route } from "react-router-dom";
 
-import Tab1 from "../pages/Tab1";
-import Tab2 from "../pages/Tab2";
-import Tab3 from "../pages/Tab3";
+import Orders from "../pages/Orders";
+import Tab2 from "../pages/Rewards";
+import Tab3 from "../pages/Wiki";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface props {}
@@ -19,7 +19,7 @@ const Tabs: React.FC<props> = () => {
   return (
     <IonTabs>
       <IonRouterOutlet id="ion-app">
-        <Route exact path="/tab1" component={Tab1} />
+        <Route exact path="/tab1" component={Orders} />
         <Route exact path="/tab2" component={Tab2} />
         <Route exact path="/tab3" component={Tab3} />
         <Route exact path="/">
