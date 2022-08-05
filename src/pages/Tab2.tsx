@@ -1,4 +1,6 @@
 import {
+  IonBackButton,
+  IonButtons,
   IonContent,
   IonHeader,
   IonPage,
@@ -13,6 +15,9 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="home" />
+          </IonButtons>
           <IonTitle>Search</IonTitle>
         </IonToolbar>
       </IonHeader>
