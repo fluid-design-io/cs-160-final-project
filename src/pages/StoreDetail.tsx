@@ -12,7 +12,7 @@ import {
   useIonActionSheet,
   useIonModal,
 } from "@ionic/react";
-import { closeCircle, giftOutline, share } from "ionicons/icons";
+import { closeCircleOutline, giftOutline, shareOutline } from "ionicons/icons";
 import { useRef } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -96,11 +96,11 @@ const StoreDetail = ({
                   },
                   {
                     text: "Share",
-                    icon: share,
+                    icon: shareOutline,
                   },
                   {
                     text: "Cancel",
-                    icon: closeCircle,
+                    icon: closeCircleOutline,
                     role: "calcel",
                   },
                 ],
