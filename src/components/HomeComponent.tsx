@@ -18,7 +18,7 @@ function HomeComponent() {
   };
   return (
     <div>
-      <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2">
+      <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2 px-4">
         <IonChip
           className="flex-shrink-0 !rounded-md"
           onClick={() => openPage("/orders")}

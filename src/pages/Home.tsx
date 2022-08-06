@@ -74,9 +74,7 @@ const Home: React.FC = () => {
                 </IonAvatar>
               )}
             </div>
-            <div className="px-4">
-              {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
-            </div>
+            {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
           </IonContent>
         </IonModal>
       </IonContent>
