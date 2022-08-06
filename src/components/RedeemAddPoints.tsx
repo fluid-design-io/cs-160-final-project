@@ -30,6 +30,7 @@ function RedeemAddPoints({ onDissmiss }: { onDissmiss: () => void }) {
             // TODO: Add form
             // TODO: Add invite section
         */}
+          <p>Add points section</p>
         </div>
       </IonContent>
     </IonPage>

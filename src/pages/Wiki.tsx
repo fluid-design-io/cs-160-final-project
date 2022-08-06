@@ -3,11 +3,14 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
+  IonImg,
+  IonItem,
+  IonLabel,
   IonPage,
+  IonThumbnail,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-
 
 const Wiki: React.FC = () => {
   return (
@@ -26,11 +29,18 @@ const Wiki: React.FC = () => {
             <IonTitle size="large">Wiki</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div className="px-4">
-          {/* 
+        {/* 
             // !TODO: Main content goes here
           */}
-        </div>
+        <IonItem routerLink={`/wiki/first`} button detail>
+          <IonThumbnail slot="start">
+            <IonImg src="https://picsum.photos/300/300" />
+          </IonThumbnail>
+          <IonLabel>
+            <h2>Wiki Title 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </IonLabel>
+        </IonItem>
       </IonContent>
     </IonPage>
   );

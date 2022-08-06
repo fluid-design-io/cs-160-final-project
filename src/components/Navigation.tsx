@@ -8,6 +8,7 @@ import Orders from "../pages/Orders";
 import Rewards from "../pages/Rewards";
 import StoreDetail from "../pages/StoreDetail";
 import Wiki from "../pages/Wiki";
+import WikiDetail from "../pages/WikiDetail";
 
 function Navigation() {
   return (
@@ -16,6 +17,7 @@ function Navigation() {
       <Route exact path="/orders" component={Orders} />
       <Route exact path="/rewards" component={Rewards} />
       <Route exact path="/wiki" component={Wiki} />
+      <Route exact path="/wiki/:id" component={WikiDetail} />
       <Route exact path="/store/:id" component={StoreDetail} />
       <Route exact path="/checkout" component={Checkout} />
       <Route exact path="/account" component={AccountComponent} />

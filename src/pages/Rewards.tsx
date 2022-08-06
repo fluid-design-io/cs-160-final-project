@@ -50,16 +50,17 @@ const Rewards: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        {/* 
+        <div className="px-4">
+          {/* 
           // !TODO: Add two components named RedeemComponent and MyRewardsComponent
           // !TODO: Then import these componets to replace the text below
         */}
-        {acitveSection === "redeem" ? (
-          <p>Redeem setion</p>
-        ) : (
-          <p>Rewards section</p>
-        )}
-        <div className="h-[200vh]" />
+          {acitveSection === "redeem" ? (
+            <p>Redeem setion - Replace me</p>
+          ) : (
+            <p>Rewards section - Replace me</p>
+          )}
+        </div>
         <IonFab
           vertical="bottom"
           horizontal="end"
