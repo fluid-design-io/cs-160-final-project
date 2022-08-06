@@ -12,26 +12,46 @@ import {
   IonPage,
   IonSearchbar,
   useIonRouter,
+  useIonViewDidEnter,
   useIonViewWillEnter,
   useIonViewWillLeave,
 } from "@ionic/react";
-import { heart } from "ionicons/icons";
+import {
+  book,
+  bookOutline,
+  heart,
+  person,
+  trophy,
+  trophyOutline,
+} from "ionicons/icons";
 import React, { useRef, useState } from "react";
+import HomeComponent from "../components/HomeComponent";
+import SearchComponent from "../components/SearchComponent";
 
 const Home: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalExpanded, setIsModalExpanded] = useState(false);
   const router = useIonRouter();
-  const openPage = async (page: string) => {
+  const openPage = (page: string) => {
     router.push(page);
   };
-  useIonViewWillEnter(() => setIsModalOpen(true));
-  useIonViewWillLeave(() => setIsModalOpen(false));
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setIsModalExpanded(false);
+  };
+  useIonViewDidEnter(handleModalOpen);
+  useIonViewWillLeave(handleModalClose);
   return (
     <IonPage>
       <IonContent fullscreen>
         <div className="bg-primary-tint w-full h-full flex justify-center items-center">
-          <p className="text-2xl font-semibold text-[#fff]">Google Map</p>
+          <p className="text-2xl font-semibold text-[#fff] text-center pb-24">
+            Google Maps <br /> (screenshot maybe?)
+          </p>
         </div>
         <IonModal
           ref={modal}
@@ -42,82 +62,33 @@ const Home: React.FC = () => {
           backdropDismiss={false}
           backdropBreakpoint={0.5}
         >
-          <IonContent className="ion-padding">
-            <IonSearchbar
-              onClick={() => modal.current?.setCurrentBreakpoint(1)}
-              placeholder="Search"
-            />
-            <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2 px-4">
-              <IonChip
-                className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/orders")}
-              >
-                <IonIcon icon={heart} color="dark" />
-                <IonLabel>Orders</IonLabel>
-              </IonChip>
-              <IonChip
-                className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/rewards")}
-              >
-                <IonIcon icon={heart} color="dark" />
-                <IonLabel>Rewards</IonLabel>
-              </IonChip>
-              <IonChip
-                className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/wiki")}
-              >
-                <IonIcon icon={heart} color="dark" />
-                <IonLabel>Wiki</IonLabel>
-              </IonChip>
-              <IonChip
-                className="flex-shrink-0 !rounded-md"
-                onClick={async () => await openPage("/wiki")}
-              >
-                <IonIcon icon={heart} color="dark" />
-                <IonLabel>Something Else</IonLabel>
-              </IonChip>
-            </IonList>
-            <IonList>
-              <IonListHeader>
-                <IonLabel className="mt-2">Recent</IonLabel>
-              </IonListHeader>
-              <IonItem>
-                <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=b" />
+          <IonContent>
+            <div className="flex justify-between pl-2 pr-4 items-center">
+              <IonSearchbar
+                onFocus={() => {
+                  setIsModalExpanded(true);
+                  modal.current?.setCurrentBreakpoint(1);
+                }}
+                onIonCancel={() => {
+                  setIsModalExpanded(false);
+                  modal.current?.setCurrentBreakpoint(0.25);
+                }}
+                showCancelButton={"focus"}
+                placeholder="Search"
+              />
+              {!isModalExpanded && (
+                <IonAvatar
+                  className="w-8 h-8"
+                  onClick={() => openPage("/account")}
+                >
+                  <IonImg
+                    src="https://i.pravatar.cc/300?u=a"
+                    className="w-8 h-8"
+                  />
                 </IonAvatar>
-                <IonLabel>
-                  <h2>Connor Smith</h2>
-                  <p>Sales Rep</p>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=a" />
-                </IonAvatar>
-                <IonLabel>
-                  <h2>Daniel Smith</h2>
-                  <p>Product Designer</p>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=d" />
-                </IonAvatar>
-                <IonLabel>
-                  <h2>Greg Smith</h2>
-                  <p>Director of Operations</p>
-                </IonLabel>
-              </IonItem>
-              <IonItem>
-                <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=e" />
-                </IonAvatar>
-                <IonLabel>
-                  <h2>Zoey Smith</h2>
-                  <p>CEO</p>
-                </IonLabel>
-              </IonItem>
-            </IonList>
+              )}
+            </div>
+            {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
           </IonContent>
         </IonModal>
       </IonContent>

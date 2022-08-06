@@ -1,5 +1,5 @@
 import {
-  IonBackButton,
+  IonButton,
   IonButtons,
   IonContent,
   IonHeader,
@@ -8,33 +8,29 @@ import {
   IonToolbar,
 } from "@ionic/react";
 
-import ExploreContainer from "../components/ExploreContainer";
-
-const Wiki: React.FC = () => {
+function RedeemAddPoints({ onDissmiss }: { onDissmiss: () => void }) {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="home" />
+            <IonButton onClick={onDissmiss}>Cancel</IonButton>
           </IonButtons>
-          <IonTitle>Wiki</IonTitle>
+          <IonTitle>Add Points</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Wiki</IonTitle>
+            <IonTitle size="large">Add Points</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div className="px-4">
-          {/* 
-            // !TODO: Main content goes here
-          */}
-        </div>
+        {/* 
+            // TODO: Add form
+            // TODO: Add invite section
+        */}
       </IonContent>
     </IonPage>
   );
-};
-
-export default Wiki;
+}
+export default RedeemAddPoints;

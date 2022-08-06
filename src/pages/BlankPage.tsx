@@ -1,16 +1,14 @@
 import {
-  IonBackButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
   IonPage,
-  IonTitle,
+  IonHeader,
   IonToolbar,
+  IonButtons,
+  IonBackButton,
+  IonTitle,
+  IonContent,
 } from "@ionic/react";
-
-import ExploreContainer from "../components/ExploreContainer";
-
-const Wiki: React.FC = () => {
+// * A empty page component for use in the app.
+function BlankPage() {
   return (
     <IonPage>
       <IonHeader>
@@ -18,23 +16,18 @@ const Wiki: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="home" />
           </IonButtons>
-          <IonTitle>Wiki</IonTitle>
+          <IonTitle>BlankPage</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Wiki</IonTitle>
+            <IonTitle size="large">BlankPage</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div className="px-4">
-          {/* 
-            // !TODO: Main content goes here
-          */}
-        </div>
+        Blank
       </IonContent>
     </IonPage>
   );
-};
-
-export default Wiki;
+}
+export default BlankPage;
