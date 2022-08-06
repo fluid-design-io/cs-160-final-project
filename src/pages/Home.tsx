@@ -1,30 +1,16 @@
 import {
   IonAvatar,
-  IonChip,
   IonContent,
-  IonIcon,
   IonImg,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
   IonModal,
   IonPage,
   IonSearchbar,
   useIonRouter,
   useIonViewDidEnter,
-  useIonViewWillEnter,
   useIonViewWillLeave,
 } from "@ionic/react";
-import {
-  book,
-  bookOutline,
-  heart,
-  person,
-  trophy,
-  trophyOutline,
-} from "ionicons/icons";
 import React, { useRef, useState } from "react";
+
 import HomeComponent from "../components/HomeComponent";
 import SearchComponent from "../components/SearchComponent";
 
@@ -88,7 +74,9 @@ const Home: React.FC = () => {
                 </IonAvatar>
               )}
             </div>
-            {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
+            <div className="px-4">
+              {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
+            </div>
           </IonContent>
         </IonModal>
       </IonContent>

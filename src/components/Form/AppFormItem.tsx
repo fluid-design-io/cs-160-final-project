@@ -1,7 +1,8 @@
 import { IonItem } from "@ionic/react";
-import { AppFormProp } from "../../../types";
-import clsxm from "../../lib/clsxm";
+
 import AppFormItemDescription from "./AppFormItemDescription";
+import clsxm from "../../lib/clsxm";
+import { AppFormProp } from "../../../types";
 
 function AppFormItem({
   error,

@@ -10,7 +10,6 @@ import {
   useIonModal,
 } from "@ionic/react";
 
-import { CardExamples } from "../components/CardExample";
 import ReportForm from "../components/ReportForm";
 
 const Orders: React.FC = () => {
@@ -44,6 +43,7 @@ const Orders: React.FC = () => {
                 canDismiss: true,
                 breakpoints: [0, 0.75, 1],
                 initialBreakpoint: 0.75,
+                handle: false,
               })
             }
           >

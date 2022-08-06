@@ -23,7 +23,7 @@ export interface AppColorPickerPorps extends AppFormShowProps {
     colors: { h: number; s: number; l: number }[];
   };
 }
-export interface AppToggleProps extends AppFormShowProps {}
+export type AppToggleProps = AppFormShowProps
 export interface AppInputProps extends AppFormShowProps {
   placeholder?: string;
 }

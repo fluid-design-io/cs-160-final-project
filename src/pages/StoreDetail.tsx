@@ -1,22 +1,22 @@
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
   IonBackButton,
-  IonTitle,
-  IonContent,
-  IonImg,
-  IonFooter,
   IonButton,
-  useIonAlert,
-  useIonModal,
+  IonButtons,
+  IonContent,
+  IonFooter,
+  IonHeader,
+  IonImg,
+  IonPage,
+  IonTitle,
+  IonToolbar,
   useIonActionSheet,
+  useIonModal,
 } from "@ionic/react";
 import { closeCircle, giftOutline, share } from "ionicons/icons";
 import { useRef } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import SendGiftComponent from "../components/SendGiftComponent";
 
 const StoreDetail = ({

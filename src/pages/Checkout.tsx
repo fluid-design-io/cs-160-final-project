@@ -1,13 +1,13 @@
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
   IonBackButton,
-  IonTitle,
+  IonButton,
+  IonButtons,
   IonContent,
   IonFooter,
-  IonButton,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from "@ionic/react";
 
 function Checkout() {

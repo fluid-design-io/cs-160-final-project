@@ -8,7 +8,6 @@ import {
   IonToolbar,
 } from "@ionic/react";
 
-import ExploreContainer from "../components/ExploreContainer";
 
 const Wiki: React.FC = () => {
   return (

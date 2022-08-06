@@ -1,9 +1,9 @@
 import { IonLabel, IonTextarea } from "@ionic/react";
 import { useFormikContext } from "formik";
 import React, { useState } from "react";
-import clsxm from "../../lib/clsxm";
 
-import { AppFormItem, AppLabel } from "./index";
+import { AppFormItem } from "./index";
+import clsxm from "../../lib/clsxm";
 function AppTextarea({ name, ...props }) {
   const {
     setFieldTouched,

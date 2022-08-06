@@ -1,9 +1,9 @@
 import { IonLabel, IonSelect, IonSelectOption } from "@ionic/react";
 import { Field, useFormikContext } from "formik";
 import { useState } from "react";
-import { AppSelectProps } from "../../interfaces/form";
 
 import { AppFormItem } from "./index";
+import { AppSelectProps } from "../../interfaces/form";
 
 function AppSelect({
   name,

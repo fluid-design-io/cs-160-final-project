@@ -68,7 +68,10 @@ export const AppInputComponent = ({
         slot="end"
         disabled={isSubmitting}
         placeholder={placeholder ? placeholder : label ? label : name}
-        className={clsxm("text-right bg-transparent", props?.className)}
+        className={clsxm(
+          "text-right bg-transparent",
+          props?.className
+        )}
         {...field}
         {...props}
       />

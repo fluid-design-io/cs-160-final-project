@@ -1,6 +1,7 @@
 import { IonButton } from "@ionic/react";
 import { useFormikContext } from "formik";
-import React, { Ref, useEffect } from "react";
+import React, { Ref } from "react";
+
 import clsxm from "../../lib/clsxm";
 
 export const SubmitButtonRef = React.forwardRef(

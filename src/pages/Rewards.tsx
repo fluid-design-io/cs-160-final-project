@@ -1,7 +1,5 @@
 import {
-  IonAlert,
   IonBackButton,
-  IonButton,
   IonButtons,
   IonContent,
   IonFab,
@@ -13,13 +11,12 @@ import {
   IonSegment,
   IonSegmentButton,
   IonTitle,
-  IonToggle,
   IonToolbar,
-  useIonAlert,
   useIonModal,
 } from "@ionic/react";
-import { gift, giftOutline } from "ionicons/icons";
+import { giftOutline } from "ionicons/icons";
 import { useRef, useState } from "react";
+
 import RedeemAddPoints from "../components/RedeemAddPoints";
 
 const Rewards: React.FC = () => {

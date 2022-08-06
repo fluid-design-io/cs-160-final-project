@@ -1,11 +1,11 @@
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
   IonBackButton,
-  IonTitle,
+  IonButtons,
   IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from "@ionic/react";
 // * A empty page component for use in the app.
 function BlankPage() {

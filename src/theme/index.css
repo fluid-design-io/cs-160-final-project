@@ -79,17 +79,9 @@
   /* #endregion  /**======== Typography =========== */
 }
 @layer utilities {
-  .explore-card {
-    @apply relative;
-  }
-  .explore-card .status-chip {
-    position: absolute;
-    bottom: 16px;
-    right: 12px;
-    border-radius: 64px;
-    padding: 4px 6px;
-    background-color: var(--ion-item-background);
-    font-size: 0.625rem;
-    font-weight: 600;
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 }

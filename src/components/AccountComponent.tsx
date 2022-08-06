@@ -1,11 +1,11 @@
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
   IonBackButton,
-  IonTitle,
+  IonButtons,
   IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from "@ionic/react";
 
 function AccountComponent() {

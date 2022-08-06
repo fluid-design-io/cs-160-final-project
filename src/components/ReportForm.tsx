@@ -1,19 +1,23 @@
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
-  IonBackButton,
-  IonTitle,
-  IonContent,
   IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from "@ionic/react";
 
 function ReportForm({ onDismiss }: { onDismiss: () => void }) {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar
+          style={{
+            "--background": "transparent",
+            "--border-width": "0px",
+          }}
+        >
           <IonButtons slot="start">
             <IonButton onClick={onDismiss}>Cancel</IonButton>
           </IonButtons>

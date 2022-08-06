@@ -1,15 +1,15 @@
 import {
-  IonList,
   IonChip,
   IonIcon,
-  IonLabel,
-  IonListHeader,
-  IonItem,
-  IonThumbnail,
   IonImg,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonThumbnail,
   useIonRouter,
 } from "@ionic/react";
-import { person, trophyOutline, bookOutline } from "ionicons/icons";
+import { bookOutline, person, trophyOutline } from "ionicons/icons";
 
 function HomeComponent() {
   const router = useIonRouter();
@@ -18,7 +18,7 @@ function HomeComponent() {
   };
   return (
     <div>
-      <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2 px-4">
+      <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2">
         <IonChip
           className="flex-shrink-0 !rounded-md"
           onClick={() => openPage("/orders")}

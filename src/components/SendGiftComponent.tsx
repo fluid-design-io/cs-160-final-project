@@ -1,12 +1,11 @@
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
-  IonBackButton,
-  IonTitle,
-  IonContent,
   IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from "@ionic/react";
 
 function SendGiftComponent({ onDissmiss }: { onDissmiss: () => void }) {
