@@ -1,4 +1,5 @@
 import {
+  IonBadge,
   IonCheckbox,
   IonChip,
   IonContent,
@@ -9,8 +10,17 @@ import {
   IonListHeader,
   useIonPopover,
 } from "@ionic/react";
-import { cafeOutline, chevronDown, flame, leaf } from "ionicons/icons";
-import { useState } from "react";
+import {
+  cafe,
+  cafeOutline,
+  chevronDown,
+  flame,
+  flameOutline,
+  leaf,
+  sunny,
+  sunnyOutline,
+} from "ionicons/icons";
+import React, { useMemo, useState } from "react";
 import clsxm from "../lib/clsxm";
 
 function SearchComponent() {
@@ -19,43 +29,102 @@ function SearchComponent() {
     compostable: false,
     recyclable: false,
   });
+  const [searchFilters, setSearchFilters] = useState({
+    popular: false,
+    bringYourOwn: false,
+    organic: false,
+  });
   const [present, dismiss] = useIonPopover(Popover, {
     onDismiss: () => dismiss(),
     ecoFilters: ecoFilters,
-    handleChange: (e) => handleChange(e),
+    handleChange: (e) => handleChangeEcoFilter(e),
   });
-  const handleChange = (e) => {
+  const handleChangeEcoFilter = (e) => {
     setEcoFilters({
       ...ecoFilters,
       [e.target.name]: e.target.checked,
     });
   };
+  const handleChangeSearchFilter = (name, checked) => {
+    setSearchFilters({
+      ...searchFilters,
+      [name]: checked,
+    });
+  };
+  // count the number of eco filters that are checked, use memo
+  const ecoFilterCount = useMemo(() => {
+    let count = 0;
+    for (const key in ecoFilters) {
+      if (ecoFilters[key]) {
+        count++;
+      }
+    }
+    return count;
+  }, [ecoFilters]);
+
   return (
     <div>
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex gap-0 flex-wrap">
         <IonChip
           className="flex-shrink-0"
           color="primary"
           onClick={(e) =>
             present({
               event: e.nativeEvent,
-              cssClass: "[--min-width:_16rem]"
+              cssClass: "[--min-width:_16rem]",
             })
           }
         >
           <IonIcon icon={leaf} />
           <IonLabel>Eco Friendly</IonLabel>
-          <IonIcon icon={chevronDown} />
+          {ecoFilterCount > 0 ? (
+            <IonBadge color="success" className="ml-2">
+              {ecoFilterCount}
+            </IonBadge>
+          ) : (
+            <IonIcon icon={chevronDown} />
+          )}
         </IonChip>
-        <IonChipToggle className="flex-shrink-0" color="purple">
-          <IonIcon icon={flame} />
+        <IonChipToggle
+          className="flex-shrink-0"
+          color="purple"
+          icons={{
+            checked: flame,
+            unchecked: flameOutline,
+          }}
+          onChange={(checked) => handleChangeSearchFilter("popular", checked)}
+        >
           <IonLabel>Popular</IonLabel>
         </IonChipToggle>
-        <IonChipToggle className="flex-shrink-0" color="information">
-          <IonIcon icon={cafeOutline} />
+        <IonChipToggle
+          className="flex-shrink-0"
+          color="information"
+          icons={{
+            checked: sunny,
+            unchecked: sunnyOutline,
+          }}
+          onChange={(checked) => handleChangeSearchFilter("organic", checked)}
+        >
+          <IonLabel>Organic</IonLabel>
+        </IonChipToggle>
+        <IonChipToggle
+          className="flex-shrink-0"
+          color="warning"
+          icons={{
+            checked: cafe,
+            unchecked: cafeOutline,
+          }}
+          onChange={(checked) =>
+            handleChangeSearchFilter("bringYourOwn", checked)
+          }
+        >
           <IonLabel>Bring-your-own</IonLabel>
         </IonChipToggle>
       </div>
+      <pre className="whitespace-pre-wrap">
+        {JSON.stringify(ecoFilters, null, "\n") +
+          JSON.stringify(searchFilters, null, "\n")}
+      </pre>
     </div>
   );
 }
@@ -75,10 +144,15 @@ const Popover = ({
         <IonListHeader>Filter by:</IonListHeader>
         {Object.keys(ecoFilters).map((key) => (
           <IonItem key={key}>
-            <IonLabel slot="end" className="capitalize">
-              {key}
+            <IonLabel className="capitalize !flex flex-grow justify-between items-center">
+              <h2>{key}</h2>
+              <img
+                src={`/assets/icon/${key}.svg`}
+                className="w-5 h-5 object-contain"
+              />
             </IonLabel>
             <IonCheckbox
+              slot="start"
               name={key}
               checked={ecoFilters[key]}
               onIonChange={handleChange}
@@ -91,33 +165,29 @@ const Popover = ({
   );
 };
 const IonChipToggle = ({
-  onCheck,
-  onUncheck,
+  onChange,
   checked,
   className,
   color,
+  icons,
   children,
   ...props
 }: {
-  onCheck?: () => void;
-  onUncheck?: () => void;
+  onChange?: (checked: boolean) => void;
   checked?: boolean;
   className?: string;
   color?: string;
+  icons: {
+    checked: string;
+    unchecked: string;
+  };
   children?: React.ReactNode;
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
   const onClick = () => {
-    if (isChecked) {
-      if (onUncheck) {
-        onUncheck();
-      }
-      setIsChecked(false);
-    } else {
-      if (onCheck) {
-        onCheck();
-      }
-      setIsChecked(true);
+    setIsChecked(!isChecked);
+    if (onChange) {
+      onChange(!isChecked);
     }
   };
   return (
@@ -128,6 +198,7 @@ const IonChipToggle = ({
       color={color || "primary"}
       {...props}
     >
+      <IonIcon icon={isChecked ? icons.checked : icons.unchecked} />
       {children}
     </IonChip>
   );
