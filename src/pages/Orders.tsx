@@ -11,7 +11,12 @@ import {
   IonContent,
   IonHeader,
   IonIcon,
+  IonImg,
+  IonItem,
   IonPage,
+  IonText,
+  IonTextarea,
+  IonThumbnail,
   IonTitle,
   IonToolbar,
   useIonModal,
@@ -72,19 +77,21 @@ const Orders: React.FC = () => {
             // !TODO: Main content goes here
           */}
                   {/*Top header portion cotainer the contribution section.*/}
-                  <IonCard>
+                  <IonCard className="rounded-[20px] border-2" style={{ borderColor: "rgb(34 197 94)", textAlign: 'center' }}>
                       <IonCardHeader>
-                          <IonCardSubtitle>Your total contribution
-                              <span>     </span>
-                              <IonIcon icon={medal} />
-                          </IonCardSubtitle>                        
+                          <span style={{paddingRight: '10px'} }> Your total contribution </span>
+                          <IonIcon icon={medal} />
                       </IonCardHeader>
 
                       <IonCardContent>
-                          300 Points
+                          <span className="rounded-[10px]" style={{ backgroundColor: 'rgb(220 252 231)', padding: '15px 40px', marginRight: '30px'}} >300 Points</span>
                       </IonCardContent>
                   </IonCard>
 
+                  <hr style={{color: 'gray', paddingBottom: '15px'} } />
+
+                  
+                 
                   {/*Uses the array above to create the list of past orders*/ }
                   {orders.map((order, index) => (
                       <OrderList
