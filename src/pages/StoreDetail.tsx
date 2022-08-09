@@ -22,7 +22,6 @@ import { useRef, useState } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MenuListItem from "../components/MenuListItem";
-
 import SendGiftComponent from "../components/SendGiftComponent";
 import { Menu, menus } from "../data/menus";
 import { stores } from "../data/stores";
@@ -42,6 +41,7 @@ const StoreDetail = ({
   const [isLiked, setIsLiked] = useState(false)
   const swiperRef = useRef<any>(null);
   const [storeMenus, setMenus] = useState<Menu[]>(menus);
+  const pageRef = useRef<any>(null);
   const [showShareSheet, hideShareSheet] = useIonActionSheet();
   const [presentSendGiftModal, hideSendGiftModal] = useIonModal(
     SendGiftComponent,
@@ -69,7 +69,7 @@ const StoreDetail = ({
     }
   };
   return (
-    <IonPage>
+    <IonPage ref={pageRef}>
       <IonHeader>
         <IonToolbar>
           <IonButtons>
@@ -77,6 +77,7 @@ const StoreDetail = ({
               <IonBackButton defaultHref="/home" className="pt-2 pr-2" />
             </IonButton>
           </IonButtons>
+          <IonTitle>{store.name}</IonTitle>
           <IonButtons slot="end" className="pt-2 pr-2">
             <IonButton color="danger" onClick={() => setIsLiked(!isLiked)}>
               <IonIcon slot="icon-only" icon={isLiked ? heart : heartOutline} />
@@ -203,7 +204,7 @@ const StoreDetail = ({
             <IonListHeader>
               Menu
             </IonListHeader>
-            {storeMenus.map(m => <MenuListItem menu={m} key={m.id} />)}
+            {storeMenus.map(m => <MenuListItem menu={m} key={m.id} pageRef={pageRef.current} />)}
           </IonList>
         </div>
       </IonContent>

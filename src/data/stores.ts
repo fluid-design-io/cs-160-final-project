@@ -85,3 +85,4 @@ export const stores = [
             "https://realfood.tesco.com/media/images/RFO-1400x919-IcedCoffee-76221116-2565-4103-9899-89571028018e-0-1400x919.jpg"]
     },
 ]
+export type Store = typeof stores[0];
