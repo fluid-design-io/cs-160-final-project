@@ -41,7 +41,7 @@ function SendGiftComponent({ onDismiss, storeName }: { onDismiss: () => void, st
           <IonList inset>
             <IonItem>
               <IonLabel>Value</IonLabel>
-              <IonInput slot="end" className="text-right" placeholder="Enter the amount ($)"></IonInput>
+              <IonInput slot="end" className="text-right" placeholder="Enter the amount"></IonInput>
             </IonItem>
             <IonItem>
               <IonLabel>Recipient</IonLabel>
