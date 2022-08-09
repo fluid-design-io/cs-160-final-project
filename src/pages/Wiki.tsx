@@ -34,7 +34,7 @@ const Wiki: React.FC = () => {
         
         <IonList>{
           wikis.map(wiki=>(
-            <IonItem routerLink={`/wiki/${wiki.id}`} button detail key={wiki.id}>
+            <IonItem className="my-2.5" routerLink={`/wiki/${wiki.id}`} button detail key={wiki.id}>
           <IonThumbnail slot="start">
             <IonImg src= {wiki.icon} />
           </IonThumbnail>

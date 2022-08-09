@@ -19,7 +19,7 @@ import {
     IonToolbar
 } from '@ionic/react';
 import { Menu } from '../data/menus';
-import './MenuListItem.css';
+
 import { useRef, useState } from 'react';
 import { addCircle, addCircleOutline, addOutline, cartOutline } from 'ionicons/icons';
 
