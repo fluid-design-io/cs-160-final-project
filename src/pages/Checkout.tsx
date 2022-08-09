@@ -1,3 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Cart from "../components/Cart";
+import {cartOutline } from 'ionicons/icons';
 import {
   IonBackButton,
   IonButton,
@@ -8,6 +11,7 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  IonIcon,
 } from "@ionic/react";
 
 function Checkout() {
@@ -18,21 +22,19 @@ function Checkout() {
           <IonButtons slot="start">
             <IonBackButton defaultHref="home" />
           </IonButtons>
-          <IonTitle>Checkout</IonTitle>
+          <IonTitle >
+            <div className = 'flex items-center justify-center gap-2'>
+            Checkout
+            <IonIcon size='large' icon={cartOutline} />
+            </div>
+            
+            </IonTitle>
+          
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Checkout</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <div className="px-4">
-          {/* 
-            // !TODO: Main content goes here
-          */}
-          This is the Checkout page.
-        </div>
+        
+          <Cart />
       </IonContent>
       <IonFooter>
         <IonToolbar className="px-4">

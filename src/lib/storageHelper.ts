@@ -12,5 +12,5 @@ export const setStorage = async (key, value) => {
 };
 
 export const getStorage = async (key) => {
-  await Storage.get({ key });
+  return await Storage.get({ key });
 };
