@@ -17,7 +17,7 @@ import {
   useIonActionSheet,
   useIonModal,
 } from "@ionic/react";
-import { arrowBack, cafe, cafeOutline, cartOutline, closeCircleOutline, flame, flameOutline, giftOutline, heart, heartOutline, leaf, menuSharp, shareOutline, shareSocialOutline, star, starHalf, starOutline, starSharp, sunny, sunnyOutline } from "ionicons/icons";
+import { arrowBack, cafe, cafeOutline, cartOutline, closeCircleOutline, flame, flameOutline, giftOutline, heart, heartOutline, leaf, menuSharp, paperPlane, shareOutline, shareSocialOutline, star, starHalf, starOutline, starSharp, sunny, sunnyOutline } from "ionicons/icons";
 import { useRef, useState } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -46,7 +46,8 @@ const StoreDetail = ({
   const [presentSendGiftModal, hideSendGiftModal] = useIonModal(
     SendGiftComponent,
     {
-      onDissmiss: () => hideSendGiftModal(),
+      onDismiss: () => hideSendGiftModal(),
+      storeName: store.name,
     }
   );
   const handleShare = () => {
@@ -89,8 +90,8 @@ const StoreDetail = ({
                     handler: () =>
                       presentSendGiftModal({
                         canDismiss: true,
-                        breakpoints: [0, 0.75, 1],
-                        initialBreakpoint: 0.75,
+                        breakpoints: [0, 0.5, 1],
+                        initialBreakpoint: 1,
                         handle: false,
                       }),
                   },
@@ -139,7 +140,7 @@ const StoreDetail = ({
             </IonToolbar>
           </IonHeader>
           <div className="px-4">
-            <span><IonIcon slot="icon-only" icon={star} />&nbsp;{store.ratings}</span>
+            <span className="pb-0"><IonIcon slot="icon-only" icon={star} /></span>&nbsp;{store.ratings}
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{store.description}</span>
           </div>
           <div className="pl-2">
@@ -158,7 +159,7 @@ const StoreDetail = ({
                 color="primary"
               >
                 <IonIcon icon={leaf} />
-                <IonLabel>Eco Friendly</IonLabel>
+                <IonLabel>Organic</IonLabel>
               </IonChip>
             }
             {
@@ -167,7 +168,7 @@ const StoreDetail = ({
                 color="primary"
               >
                 <IonIcon icon={leaf} />
-                <IonLabel>Eco Friendly</IonLabel>
+                <IonLabel>Bio-degradable</IonLabel>
               </IonChip>
             }
             {
@@ -175,8 +176,8 @@ const StoreDetail = ({
                 className="flex-shrink-0"
                 color="primary"
               >
-                <IonIcon icon={leaf} />
-                <IonLabel>Eco Friendly</IonLabel>
+                <IonIcon icon={paperPlane} />
+                <IonLabel>Compostable</IonLabel>
               </IonChip>
             }
             {
@@ -185,7 +186,7 @@ const StoreDetail = ({
                 color="primary"
               >
                 <IonIcon icon={leaf} />
-                <IonLabel>Eco Friendly</IonLabel>
+                <IonLabel>Recyclable</IonLabel>
               </IonChip>
             }
             {
@@ -208,9 +209,9 @@ const StoreDetail = ({
       </IonContent>
       <IonFooter>
         <IonToolbar className="px-4">
-          <IonButton color="primary" expand="block" routerLink="/checkout">
-            <IonIcon icon={cartOutline} />
-            &nbsp;&nbsp;Checkout
+          <IonButton className="pt-1 pb-1" color="primary" expand="block" routerLink="/checkout">
+            <IonIcon icon={cartOutline} color="light" />
+            &nbsp;&nbsp;<span className="text-[white]">Checkout</span>
           </IonButton>
         </IonToolbar>
       </IonFooter>

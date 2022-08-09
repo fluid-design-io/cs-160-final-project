@@ -10,7 +10,7 @@ export const stores = [
             recyclable: false,
             popular: true,
             bringYourOwn: true,
-            organic: false,
+            organic: true,
         },
         images: ["https://www.theflouredcamera.com/wp-content/uploads/2021/06/01.jpg",
             "https://healthynibblesandbits.com/wp-content/uploads/2018/07/How-to-Make-Bubble-Tea-9.jpg",

@@ -44,3 +44,8 @@ ion-footer ion-title {
     font-size: 11px;
     font-weight: normal;
 }
+
+ion-checkbox {
+    --checkmark-color: white;
+    --checkmark-width: 1.5px;
+}
