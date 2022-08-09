@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from "../components/Cart";
 import {cartOutline } from 'ionicons/icons';
 import {

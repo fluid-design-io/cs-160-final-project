@@ -6,11 +6,13 @@ import {
   IonImg,
   IonItem,
   IonLabel,
+  IonList,
   IonPage,
   IonThumbnail,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { wikis } from "../data/wiki";
 
 const Wiki: React.FC = () => {
   return (
@@ -29,18 +31,20 @@ const Wiki: React.FC = () => {
             <IonTitle size="large">Wiki</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {/* 
-            // !TODO: Main content goes here
-          */}
-        <IonItem routerLink={`/wiki/first`} button detail>
+        
+        <IonList>{
+          wikis.map(wiki=>(
+            <IonItem routerLink={`/wiki/${wiki.id}`} button detail key={wiki.id}>
           <IonThumbnail slot="start">
-            <IonImg src="https://picsum.photos/300/300" />
+            <IonImg src= {wiki.icon} />
           </IonThumbnail>
           <IonLabel>
-            <h2>Wiki Title 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>{wiki.name}</h2>
+            <p>{wiki.tagline}</p>
           </IonLabel>
         </IonItem>
+          ))
+        }</IonList>
       </IonContent>
     </IonPage>
   );
