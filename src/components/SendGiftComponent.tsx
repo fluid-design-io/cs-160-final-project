@@ -2,13 +2,22 @@ import {
   IonButton,
   IonButtons,
   IonContent,
+  IonFooter,
   IonHeader,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
   IonPage,
+  IonTextarea,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { airplaneOutline, sendOutline, storefront, text, textOutline } from "ionicons/icons";
+import StoreDetail from "../pages/StoreDetail";
 
-function SendGiftComponent({ onDissmiss }: { onDissmiss: () => void }) {
+function SendGiftComponent({ onDismiss, storeName }: { onDismiss: () => void, storeName: string }) {
   return (
     <IonPage>
       <IonHeader>
@@ -19,19 +28,40 @@ function SendGiftComponent({ onDissmiss }: { onDissmiss: () => void }) {
           }}
         >
           <IonButtons slot="start">
-            <IonButton onClick={onDissmiss}>Cancel</IonButton>
+            <IonButton onClick={onDismiss}>Cancel</IonButton>
           </IonButtons>
-          <IonTitle>XX Store Coupon</IonTitle>
+          <IonTitle>{storeName} Coupon</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <div className="px-4">
-          {/* 
-        // TODO: Add the SendGiftComponent here.
-        */}
-          Blank
+          <img className="mx-auto" src="/assets/icon/giftcard.png" />
+        </div>
+        <div className="px-4">
+          <IonList inset>
+            <IonItem>
+              <IonLabel>Value</IonLabel>
+              <IonInput slot="end" className="text-right" placeholder="Enter the amount"></IonInput>
+            </IonItem>
+            <IonItem>
+              <IonLabel>Recipient</IonLabel>
+              <IonInput slot="end" className="text-right" placeholder="Enter the recipient"></IonInput>
+            </IonItem>
+            <IonItem>
+              <IonLabel>Message</IonLabel>
+              <IonTextarea rows={5} className="text-right pr-2" placeholder="Type in an eco-friendly message"></IonTextarea>
+            </IonItem>
+          </IonList>
         </div>
       </IonContent>
+      <IonFooter>
+        <IonToolbar className="px-4">
+          <IonButton className="pb-1" color="primary" expand="block" onClick={onDismiss}>
+            <IonIcon icon={airplaneOutline} color="light"/>
+            <span className="text-[white]">&nbsp;&nbsp;Send to text</span>
+          </IonButton>
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 }
