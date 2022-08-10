@@ -10,6 +10,11 @@ import {
   useIonRouter,
 } from "@ionic/react";
 import { bookOutline, person, trophyOutline } from "ionicons/icons";
+import React from "react";
+import { stores } from "../data/stores";
+import { wikis } from "../data/wiki";
+import StoreCardItem from "./StoreCardItem";
+import StoreListItem from "./StoreListItem";
 
 function HomeComponent() {
   const router = useIonRouter();
@@ -17,8 +22,8 @@ function HomeComponent() {
     router.push(page);
   };
   return (
-    <div>
-      <IonList className="whitespace-nowrap overscroll-x-srcoll overflow-y-hidden flex gap-2 px-4">
+    <React.Fragment>
+      <div className="flex gap-2 px-3">
         <IonChip
           className="flex-shrink-0 !rounded-md"
           onClick={() => openPage("/orders")}
@@ -43,34 +48,29 @@ function HomeComponent() {
           <IonIcon icon={bookOutline} />
           <IonLabel>Wiki</IonLabel>
         </IonChip>
+      </div>
+      <IonList className="pb-8">
+        <IonListHeader>Recent</IonListHeader>
+        {stores.map((store) => (
+          <StoreListItem key={`recent.${store.id}`} store={store} />
+        ))}
+        <IonListHeader>Featured</IonListHeader>
+        <div className="px-4 flex gap-4 whitespace-nowrap overflow-x-auto max-w-full overflow-y-visible pb-4">
+          {stores.map(
+            (store) =>
+              store.filter.popular && (
+                <StoreCardItem key={`featured.${store.id}`} store={store} />
+              )
+          )}
+        </div>
+        <IonListHeader>Wiki</IonListHeader>
+        <div className="px-4 flex gap-4 whitespace-nowrap overflow-x-auto max-w-full overflow-y-visible pb-4">
+          {wikis.map((wiki) => (
+            <StoreCardItem key={`wiki.${wiki.id}`} wiki={wiki} />
+          ))}
+        </div>
       </IonList>
-      <IonList>
-        <IonListHeader>
-          <IonLabel className="mt-2">Recent</IonLabel>
-        </IonListHeader>
-        {/* 
-            // !TODO: Replace with component and from data
-          */}
-        <IonItem routerLink="/store/1">
-          <IonThumbnail slot="start">
-            <IonImg src="https://picsum.photos/200" />
-          </IonThumbnail>
-          <IonLabel>
-            <h2>Boba Store 1</h2>
-            <p>Description</p>
-          </IonLabel>
-        </IonItem>
-        <IonItem routerLink="/store/2">
-          <IonThumbnail slot="start">
-            <IonImg src="https://picsum.photos/seed/b/200" />
-          </IonThumbnail>
-          <IonLabel>
-            <h2>Boba Store 2</h2>
-            <p>Description</p>
-          </IonLabel>
-        </IonItem>
-      </IonList>
-    </div>
+    </React.Fragment>
   );
 }
 export default HomeComponent;

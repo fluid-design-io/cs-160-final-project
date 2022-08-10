@@ -21,7 +21,9 @@ import {
   sunnyOutline,
 } from "ionicons/icons";
 import React, { useMemo, useState } from "react";
+import { stores } from "../data/stores";
 import clsxm from "../lib/clsxm";
+import StoreListItem from "./StoreListItem";
 
 function SearchComponent() {
   const [ecoFilters, setEcoFilters] = useState({
@@ -61,6 +63,21 @@ function SearchComponent() {
     }
     return count;
   }, [ecoFilters]);
+
+  const searchFilterStores = useMemo(() => {
+    let filteredStores = stores;
+    for (const key in searchFilters) {
+      if (searchFilters[key]) {
+        filteredStores = filteredStores.filter((store) => store.filter[key]);
+      }
+    }
+    for (const key in ecoFilters) {
+      if (ecoFilters[key]) {
+        filteredStores = filteredStores.filter((store) => store.filter[key]);
+      }
+    }
+    return filteredStores;
+  }, [searchFilters, ecoFilters]);
 
   return (
     <div>
@@ -121,10 +138,20 @@ function SearchComponent() {
           <IonLabel>Bring-your-own</IonLabel>
         </IonChipToggle>
       </div>
-      <pre className="whitespace-pre-wrap">
-        {JSON.stringify(ecoFilters, null, "\n") +
-          JSON.stringify(searchFilters, null, "\n")}
-      </pre>
+      <IonList>
+        <IonListHeader>
+          <IonLabel>
+            {searchFilterStores.length > 0 ? (
+              <>{searchFilterStores.length} stores found</>
+            ) : (
+              "No stores found"
+            )}
+          </IonLabel>
+        </IonListHeader>
+        {searchFilterStores.map((store) => (
+          <StoreListItem key={store.id} store={store} />
+        ))}
+      </IonList>
     </div>
   );
 }

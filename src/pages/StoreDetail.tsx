@@ -17,10 +17,24 @@ import {
   useIonActionSheet,
   useIonModal,
 } from "@ionic/react";
-import { arrowBack, cafe, cafeOutline, cartOutline, closeCircleOutline, flame, flameOutline, giftOutline, heart, heartOutline, leaf, menuSharp, paperPlane, shareOutline, shareSocialOutline, star, starHalf, starOutline, starSharp, sunny, sunnyOutline } from "ionicons/icons";
+import {
+  cafe,
+  cartOutline,
+  closeCircleOutline,
+  flame,
+  giftOutline,
+  heart,
+  heartOutline,
+  leaf,
+  paperPlane,
+  shareOutline,
+  shareSocialOutline,
+  star,
+} from "ionicons/icons";
 import { useRef, useState } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import MenuListItem from "../components/MenuListItem";
 import SendGiftComponent from "../components/SendGiftComponent";
 import { Menu, menus } from "../data/menus";
@@ -36,9 +50,9 @@ const StoreDetail = ({
   // * This is the id of the store that we are looking at.
   // * We will use this id to get the store information.
   const id = params?.id || "";
-  const store = stores.find(s => s.id.toString() === id.toString());
+  const store = stores.find((s) => s.id.toString() === id.toString());
   console.log(store);
-  const [isLiked, setIsLiked] = useState(false)
+  const [isLiked, setIsLiked] = useState(false);
   const swiperRef = useRef<any>(null);
   const [storeMenus, setMenus] = useState<Menu[]>(menus);
   const pageRef = useRef<any>(null);
@@ -54,9 +68,9 @@ const StoreDetail = ({
     if (navigator.share) {
       navigator
         .share({
-          title: "Something",
-          text: "Hello, please come visit my website",
-          url: "www.website.com.br",
+          title: "Share",
+          text: `Check out this store on ${store.name}`,
+          url: "www.example.com",
         })
         .then(() => {
           console.log("Successfully shared");
@@ -65,7 +79,7 @@ const StoreDetail = ({
           console.error("Something went wrong", error);
         });
     } else {
-      console.log("not shared")
+      // console.log("not shared");
     }
   };
   return (
@@ -82,33 +96,35 @@ const StoreDetail = ({
             <IonButton color="danger" onClick={() => setIsLiked(!isLiked)}>
               <IonIcon slot="icon-only" icon={isLiked ? heart : heartOutline} />
             </IonButton>
-            <IonButton onClick={() =>
-              showShareSheet({
-                buttons: [
-                  {
-                    text: "Send Gift",
-                    icon: giftOutline,
-                    handler: () =>
-                      presentSendGiftModal({
-                        canDismiss: true,
-                        breakpoints: [0, 0.5, 1],
-                        initialBreakpoint: 1,
-                        handle: false,
-                      }),
-                  },
-                  {
-                    text: "Share",
-                    icon: shareOutline,
-                    handler: () => handleShare(),
-                  },
-                  {
-                    text: "Cancel",
-                    icon: closeCircleOutline,
-                    role: "cancel",
-                  },
-                ],
-              })
-            }>
+            <IonButton
+              onClick={() =>
+                showShareSheet({
+                  buttons: [
+                    {
+                      text: "Send Gift",
+                      icon: giftOutline,
+                      handler: () =>
+                        presentSendGiftModal({
+                          canDismiss: true,
+                          breakpoints: [0, 0.5, 1],
+                          initialBreakpoint: 1,
+                          handle: false,
+                        }),
+                    },
+                    {
+                      text: "Share",
+                      icon: shareOutline,
+                      handler: () => handleShare(),
+                    },
+                    {
+                      text: "Cancel",
+                      icon: closeCircleOutline,
+                      role: "cancel",
+                    },
+                  ],
+                })
+              }
+            >
               <IonIcon slot="icon-only" icon={shareSocialOutline} />
             </IonButton>
           </IonButtons>
@@ -126,10 +142,7 @@ const StoreDetail = ({
           >
             {store.images.map((image, index) => (
               <SwiperSlide key={index}>
-                <IonImg
-                  src={image}
-                  className="object-cover aspect-[4/3]"
-                />
+                <IonImg src={image} className="object-cover aspect-[4/3]" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -141,76 +154,66 @@ const StoreDetail = ({
             </IonToolbar>
           </IonHeader>
           <div className="px-4">
-            <span className="pb-0"><IonIcon slot="icon-only" icon={star} /></span>&nbsp;{store.ratings}
+            <span className="pb-0">
+              <IonIcon slot="icon-only" icon={star} />
+            </span>
+            &nbsp;{store.ratings}
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{store.description}</span>
           </div>
           <div className="pl-2">
-            {
-              store.filter.popular && <IonChip
-                className="flex-shrink-0"
-                color="purple"
-              >
+            {store.filter.popular && (
+              <IonChip className="flex-shrink-0" color="purple">
                 <IonIcon icon={flame} />
                 <IonLabel>Popular</IonLabel>
               </IonChip>
-            }
-            {
-              store.filter.organic && <IonChip
-                className="flex-shrink-0"
-                color="primary"
-              >
+            )}
+            {store.filter.organic && (
+              <IonChip className="flex-shrink-0" color="primary">
                 <IonIcon icon={leaf} />
                 <IonLabel>Organic</IonLabel>
               </IonChip>
-            }
-            {
-              store.filter.biodegradable && <IonChip
-                className="flex-shrink-0"
-                color="primary"
-              >
+            )}
+            {store.filter.biodegradable && (
+              <IonChip className="flex-shrink-0" color="primary">
                 <IonIcon icon={leaf} />
                 <IonLabel>Bio-degradable</IonLabel>
               </IonChip>
-            }
-            {
-              store.filter.compostable && <IonChip
-                className="flex-shrink-0"
-                color="primary"
-              >
+            )}
+            {store.filter.compostable && (
+              <IonChip className="flex-shrink-0" color="primary">
                 <IonIcon icon={paperPlane} />
                 <IonLabel>Compostable</IonLabel>
               </IonChip>
-            }
-            {
-              store.filter.recyclable && <IonChip
-                className="flex-shrink-0"
-                color="primary"
-              >
+            )}
+            {store.filter.recyclable && (
+              <IonChip className="flex-shrink-0" color="primary">
                 <IonIcon icon={leaf} />
                 <IonLabel>Recyclable</IonLabel>
               </IonChip>
-            }
-            {
-              store.filter.bringYourOwn && <IonChip
-                className="flex-shrink-0"
-                color="warning"
-              >
+            )}
+            {store.filter.bringYourOwn && (
+              <IonChip className="flex-shrink-0" color="warning">
                 <IonIcon icon={cafe} />
                 <IonLabel>Bring-your-own</IonLabel>
               </IonChip>
-            }
+            )}
           </div>
           <IonList>
-            <IonListHeader>
-              Menu
-            </IonListHeader>
-            {storeMenus.map(m => <MenuListItem menu={m} key={m.id} pageRef={pageRef.current} />)}
+            <IonListHeader>Menu</IonListHeader>
+            {storeMenus.map((m) => (
+              <MenuListItem menu={m} key={m.id} pageRef={pageRef.current} />
+            ))}
           </IonList>
         </div>
       </IonContent>
       <IonFooter>
         <IonToolbar className="px-4">
-          <IonButton className="pt-1 pb-1" color="primary" expand="block" routerLink="/checkout">
+          <IonButton
+            className="pt-1 pb-1"
+            color="primary"
+            expand="block"
+            routerLink="/checkout"
+          >
             <IonIcon icon={cartOutline} color="light" />
             &nbsp;&nbsp;<span className="text-[white]">Checkout</span>
           </IonButton>

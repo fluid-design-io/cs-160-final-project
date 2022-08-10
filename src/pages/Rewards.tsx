@@ -18,6 +18,8 @@ import { giftOutline } from "ionicons/icons";
 import { useRef, useState } from "react";
 
 import RedeemAddPoints from "../components/RedeemAddPoints";
+import RedeemComponent from "../components/RedeemComponent";
+import RewardsComponent from "../components/RewardsComponent";
 
 const Rewards: React.FC = () => {
   const pageRef = useRef<any>(null);
@@ -49,18 +51,21 @@ const Rewards: React.FC = () => {
           </IonSegment>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <div className="px-4">
-          {/* 
+      <IonContent className="relative" fullscreen>
+        <IonHeader collapse="condense" className="invisible">
+          <IonToolbar>
+            <IonTitle className="pl-4 pb-0" />
+          </IonToolbar>
+        </IonHeader>
+        {/* 
           // !TODO: Add two components named RedeemComponent and MyRewardsComponent
           // !TODO: Then import these componets to replace the text below
         */}
-          {acitveSection === "redeem" ? (
-            <p>Redeem setion - Replace me</p>
-          ) : (
-            <p>Rewards section - Replace me</p>
-          )}
-        </div>
+        {acitveSection === "redeem" ? (
+          <RedeemComponent />
+        ) : (
+          <RewardsComponent />
+        )}
         <IonFab
           vertical="bottom"
           horizontal="end"

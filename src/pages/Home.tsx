@@ -1,10 +1,12 @@
 import {
   IonAvatar,
   IonContent,
+  IonHeader,
   IonImg,
   IonModal,
   IonPage,
   IonSearchbar,
+  IonToolbar,
   useIonRouter,
   useIonViewDidEnter,
   useIonViewWillLeave,
@@ -34,22 +36,30 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <div className="bg-primary-tint w-full h-full flex justify-center items-center">
-          <p className="text-2xl font-semibold text-[#fff] text-center pb-24">
-            Google Maps <br /> (screenshot maybe?)
-          </p>
-        </div>
-        <IonModal
-          ref={modal}
-          trigger="open-modal"
-          isOpen={isModalOpen}
-          initialBreakpoint={0.25}
-          breakpoints={[0.25, 0.5, 1]}
-          backdropDismiss={false}
-          backdropBreakpoint={0.5}
-        >
-          <IonContent>
-            <div className="flex justify-between pl-2 pr-4 items-center">
+        <div
+          style={{
+            backgroundImage: "url(/assets/images/map.png)",
+          }}
+          className="bg-cover bg-center w-full h-full"
+        ></div>
+      </IonContent>
+      <IonModal
+        ref={modal}
+        trigger="open-modal"
+        isOpen={isModalOpen}
+        initialBreakpoint={0.25}
+        breakpoints={[0.25, 0.5, 1]}
+        backdropDismiss={false}
+        backdropBreakpoint={0.5}
+      >
+        <IonHeader>
+          <IonToolbar
+            style={{
+              "--background": "transparent",
+              "--border-width": "0px",
+            }}
+          >
+            <div className="flex justify-between items-center">
               <IonSearchbar
                 onFocus={() => {
                   setIsModalExpanded(true);
@@ -59,8 +69,10 @@ const Home: React.FC = () => {
                   setIsModalExpanded(false);
                   modal.current?.setCurrentBreakpoint(0.25);
                 }}
+                // onBlur={() => setIsModalExpanded(false)}
                 showCancelButton={"focus"}
                 placeholder="Search"
+                className="!pb-0 pl-0"
               />
               {!isModalExpanded && (
                 <IonAvatar
@@ -74,10 +86,12 @@ const Home: React.FC = () => {
                 </IonAvatar>
               )}
             </div>
-            {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
-          </IonContent>
-        </IonModal>
-      </IonContent>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          {isModalExpanded ? <SearchComponent /> : <HomeComponent />}
+        </IonContent>
+      </IonModal>
     </IonPage>
   );
 };
