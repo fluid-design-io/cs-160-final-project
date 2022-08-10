@@ -27,7 +27,7 @@ function RewardsComponent() {
         }}
         isPassed={false}
       />
-      <h2 className="text-lg font-bold px-4 py-4">Active</h2>
+      <h2 className="text-lg font-bold px-4 py-4">Passed</h2>
       <RewardCard
         reward={{
           name: stores[2].name,
