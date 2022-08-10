@@ -32,9 +32,9 @@ export const stores = [
       bringYourOwn: true,
     },
     images: [
-      "https://takestwoeggs.com/wp-content/uploads/2022/04/Jasmine-Milk-Tea-Takestwoeggs-Final-Photography-1.jpg",
-      "https://takestwoeggs.com/wp-content/uploads/2021/10/Thai-Iced-Tea-Takestwoeggs-FINAL-1.jpg",
       "https://takestwoeggs.com/wp-content/uploads/2021/09/Matcha-Pineapple-Drink-Starbucks-inspired-Takestwoeggs-Final.jpg",
+      "https://cdn.mos.cms.futurecdn.net/4cNW8RsNhYW3uVxJNiV2b-1920-80.jpg",
+      "https://takestwoeggs.com/wp-content/uploads/2021/10/Thai-Iced-Tea-Takestwoeggs-FINAL-1.jpg",
     ],
   },
   {
@@ -70,7 +70,7 @@ export const stores = [
       bringYourOwn: true,
     },
     images: [
-      "https://lh3.googleusercontent.com/p/AF1QipMQA08SkiDOlWfWkSmwB7KN9K_p1SF8DY9BpsCn=s1280-p-no-v1",
+      "https://i.pinimg.com/736x/15/4c/4a/154c4ac07a09b19e833790c038e76359.jpg",
       "https://lindseyeatsla.com/wp-content/uploads/2020/08/Lindseyeatsla_Matcha_Boba-7-1.jpg",
       "https://www.foxyfolksy.com/wp-content/uploads/2020/06/brown-sugar-milk-tea.jpg",
     ],
