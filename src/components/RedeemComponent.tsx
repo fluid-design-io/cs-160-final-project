@@ -49,7 +49,7 @@ function RedeemComponent() {
       </div>
 
       <h2 className="text-lg font-bold px-4 py-4">400 - 800 Points</h2>
-      <div className="grid grid-cols-2 gap-4 px-4">
+      <div className="grid grid-cols-2 gap-4 px-4 pb-12">
         <RedeemCardSmall
           title={stores[2].name}
           desc={stores[2].description}
@@ -82,7 +82,7 @@ const RedeemCardLarge = ({ title, desc, points, image }) => {
         <div>
           <h1 className="text-md font-bold whitespace-normal">{title}</h1>
           <p className="text-medium-tint">{desc}</p>
-          <p className="text-medium-tint">{points}</p>
+          <p className="text-medium-tint">{points} Points</p>
         </div>
         <div className="w-full flex justify-end">
           <IonButton shape="round" size="small">
