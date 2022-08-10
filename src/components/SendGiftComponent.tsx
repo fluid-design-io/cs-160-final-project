@@ -35,7 +35,7 @@ function SendGiftComponent({ onDismiss, storeName }: { onDismiss: () => void, st
       </IonHeader>
       <IonContent fullscreen>
         <div className="px-4">
-          <img className="mx-auto" src="/assets/icon/giftcard.png" />
+          <img className="mx-auto" src="/assets/icon/eco-giftcard.png" />
         </div>
         <div className="px-4">
           <IonList inset>
