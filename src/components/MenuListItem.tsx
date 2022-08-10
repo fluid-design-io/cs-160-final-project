@@ -23,9 +23,10 @@ import {
     IonToolbar
 } from '@ionic/react';
 import { Menu } from '../data/menus';
-import { useEffect, useRef, useState } from 'react';
-import { addCircle, addCircleOutline, addOutline, bagAddOutline, bagRemoveOutline, cart, cartOutline, removeCircleOutline, trash } from 'ionicons/icons';
-import { setNestedObjectValues } from 'formik';
+
+import { useRef, useState } from 'react';
+import { addCircle, addCircleOutline, addOutline, cartOutline } from 'ionicons/icons';
+
 
 interface MenuListItemProps {
     menu: Menu;
