@@ -49,7 +49,7 @@ function SendGiftComponent({ onDismiss, storeName }: { onDismiss: () => void, st
             </IonItem>
             <IonItem>
               <IonLabel>Message</IonLabel>
-              <IonTextarea rows={5} className="text-right pr-2" placeholder="Type in an eco-friendly message"></IonTextarea>
+              <IonTextarea rows={5} className="text-right pr-2" placeholder="Enter an eco-friendly message"></IonTextarea>
             </IonItem>
           </IonList>
         </div>
