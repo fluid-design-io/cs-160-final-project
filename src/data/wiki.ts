@@ -15,8 +15,9 @@ export const wikis = [
       "Do not recycle or throw in garbage. Biodegradable plastics (except for PET) should NOT be recycled, because they contaminate the process and result in low-quality recycled products. Garbage ends up in landfills. Most landfills are compacted so tightly, there’s not much dirt, very little oxygen, and few if any microorganisms and thus do not let much air in. Biodegradation in a landful that does take place does so very slowly.",
     label:
       "It's hard to tell from packaging, sure-fire way is to ask manufacturer for a third-party certification",
-    icon: "https://i.ibb.co/nmwByrS/biodegradable.png",
-    image: "https://files.worldwildlife.org/wwfcmsprod/images/compostable_plastic_HEADER___shutterstock___Sustainability_Works/blog_show/5ppxnfvote_shutterstock_1254457303_swheader.jpg",
+    icon: "/assets/icon/bio.png",
+    image:
+      "https://files.worldwildlife.org/wwfcmsprod/images/compostable_plastic_HEADER___shutterstock___Sustainability_Works/blog_show/5ppxnfvote_shutterstock_1254457303_swheader.jpg",
   },
   {
     id: "Compostable",
@@ -32,8 +33,9 @@ export const wikis = [
     nottodo:
       "Do not recycle or throw in garabge. Compostable products are not recyclable, they contaminate the process and result in low-quality recycled products. Garbage ends up in landfills. Most landfills are compacted so tightly, there’s not much dirt, very little oxygen, and few if any microorganisms and thus do not let much air in. Biodegradation in a landful that does take place does so very slowly.",
     label: "Compostable must be clearly indicated on packaging.",
-    icon: "https://i.ibb.co/FYydjfN/compostable.png",
-    image: "https://www.adhesiveplatform.com/wp-content/uploads/2019/06/compostable-adhesives-1030x671.jpg",
+    icon: "/assets/icon/comp.png",
+    image:
+      "https://www.adhesiveplatform.com/wp-content/uploads/2019/06/compostable-adhesives-1030x671.jpg",
   },
   {
     id: "Recyclable",
@@ -50,8 +52,9 @@ export const wikis = [
       "You can only recycled plastic a few times, as recycled plastic may be of lower qualities.",
     label:
       "Recyclable products are labeled with a small triangle made of arrows. 7 categories of plastics known as resin numbers (yes, the numbers printed in the center of the triangle), the first category being the highest grade plastics, the seventh being a catch-all category that includes items like biodegradable products.",
-    icon: "https://i.ibb.co/VNRJRML/recycle-sign.png",
-    image: "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&w=1788&h=894&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2017%2F05%2F30%2Ffull-recycle-bin.jpg",
+    icon: "/assets/icon/recy.png",
+    image:
+      "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&w=1788&h=894&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2017%2F05%2F30%2Ffull-recycle-bin.jpg",
   },
 ];
 
